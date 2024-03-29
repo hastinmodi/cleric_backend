@@ -26,6 +26,7 @@ Flask-Cors==4.0.0
 Flask-Executor==1.0.0
 frozenlist==1.4.1
 fsspec==2024.3.1
+gevent==24.2.1
 greenlet==3.0.3
 gunicorn==21.2.0
 h11==0.14.0
@@ -103,3 +104,5 @@ wrapt==1.16.0
 wsproto==1.2.0
 yarl==1.9.4
 zipp==3.18.1
+zope.event==5.0
+zope.interface==6.2
