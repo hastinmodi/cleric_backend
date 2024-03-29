@@ -1,4 +1,5 @@
-from sentence_transformers import SentenceTransformer
+# from sentence_transformers import SentenceTransformer
+import spacy
 from scipy.spatial.distance import cosine
 from collections import defaultdict
 from datetime import timedelta
@@ -18,11 +19,15 @@ anthropic_model_name = "claude-3-haiku-20240307"
 llm_temperature = 0.0
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
+nlp = spacy.load("en_core_web_md")
+
 # Function to calculate the similarity between a new fact and a list of old facts
 def fact_similarity(new_fact: str, old_facts: list):
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    input_embedding = model.encode(new_fact)
-    sentence_embeddings = model.encode(old_facts)
+    # model = SentenceTransformer("all-MiniLM-L6-v2")
+    # input_embedding = model.encode(new_fact)
+    input_embedding = nlp(new_fact).vector
+    # sentence_embeddings = model.encode(old_facts)
+    sentence_embeddings = [nlp(text).vector for text in old_facts]
     similarities = [
         1 - cosine(input_embedding, embedding) for embedding in sentence_embeddings
     ]
@@ -108,7 +113,6 @@ def classify_facts(all_prev_facts: dict, prev_facts: dict, curr_facts: dict):
 
             # Process the model's output to determine classification
             fact_output = fact_type.content.split("\n")
-            print(fact_output)
             if len(fact_output) < 2:
                 classified_facts_add_all[day].append(facts[0])
                 continue
