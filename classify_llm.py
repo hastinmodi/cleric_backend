@@ -14,13 +14,15 @@ from utils import (
     merge_dicts,
     auto_approve_suggestions,
 )
+import en_core_web_sm
+nlp = en_core_web_sm.load()
 
 anthropic_model_name = "claude-3-haiku-20240307"
 llm_temperature = 0.0
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 # nlp = spacy.load("en_core_web_md")
-nlp = spacy.load('en_core_web_sm')
+# nlp = spacy.load('en_core_web_sm')
 
 # Function to calculate the similarity between a new fact and a list of old facts
 def fact_similarity(new_fact: str, old_facts: list):
