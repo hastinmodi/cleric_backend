@@ -1,5 +1,6 @@
 # from sentence_transformers import SentenceTransformer
 import spacy
+import en_core_web_md
 from scipy.spatial.distance import cosine
 from collections import defaultdict
 from datetime import timedelta
@@ -19,7 +20,8 @@ anthropic_model_name = "claude-3-haiku-20240307"
 llm_temperature = 0.0
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-nlp = spacy.load("en_core_web_md")
+# nlp = spacy.load("en_core_web_md")
+nlp = en_core_web_md.load()
 
 # Function to calculate the similarity between a new fact and a list of old facts
 def fact_similarity(new_fact: str, old_facts: list):
