@@ -1,0 +1,8 @@
+00:09:17,380 --> 00:10:40,520
+Shaun: With regards to the plan on providing the revenue stream options, let us scrap that as the leadership meet isn't going to happen soon.
+
+00:12:41,250 --> 00:15:49,980
+Jake: Sounds good, I think we can focus on delivering the new version in 3 weeks instead of the 1 week deadline earlier.
+
+00:16:29,140 --> 00:16:53,040
+Michael: Sure, my team has already started the work on the backend components and should be done by the end of next week so that we can commence the testing early.

@@ -1,0 +1,11 @@
+00:10:17,380 --> 00:10:40,520
+Michael: Any updates on the new version progress?
+
+00:12:41,250 --> 00:15:49,980
+Jake: Yes, our team has started building out the UI part of the version along with adding new features such as a help box, command line, and emojis.
+
+00:16:29,140 --> 00:16:53,040
+Michael: Sounds good, I don't actually think that we need the support for emojis right now as it is not one of the priorities.
+
+00:16:58,250 --> 00:16:53,040
+Jake: Got it, we will keep it on lower priority for now then.
