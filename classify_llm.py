@@ -108,6 +108,10 @@ def classify_facts(all_prev_facts: dict, prev_facts: dict, curr_facts: dict):
 
             # Process the model's output to determine classification
             fact_output = fact_type.content.split("\n")
+            print(fact_output)
+            if len(fact_output) < 2:
+                classified_facts_add_all[day].append(facts[0])
+                continue
             # If the model indicates the new fact adds information without altering the old fact
             if ("Yes" in fact_output[0]) and ("No" in fact_output[1]):
                 if facts[i] not in classified_facts_add_all[day]:
