@@ -93,3 +93,6 @@ def get_question_and_facts():
 @app.route("/<path:path>")
 def static_file(path):
     return app.send_static_file(path), 200
+
+if __name__ == '__main__':
+    app.run()
