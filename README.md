@@ -50,3 +50,24 @@ The system exposes several endpoints for interaction:
 3. Submit Approvals: POST /submit_approvals
 4. Get Question and Facts: GET /get_question_and_facts
 
+## API Example
+1. A POST endpoint for us to submit a question and a list of documents
+   
+https://cleric.bhagavadgita.tech/submit_question_and_documents
+```
+{
+  "question": "What are our product design decisions?",
+  "documents": [
+    "https://example.com/call_log_20240314_104111.txt",
+    "https://example.com/call_log_20240315_104111.txt",
+    "https://example.com/call_log_20240316_104111.txt"
+  ],
+  "autoApprove": true
+}
+```
+
+2. A GET request for polling the result
+
+https://cleric.bhagavadgita.tech/get_question_and_facts
+
+
